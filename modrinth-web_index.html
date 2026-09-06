@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17181c" />
+  <title>Modrinth Web</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="logo">M</div><span>Modrinth</span></div>
+      <nav>
+        <button class="nav-item active" data-page="home">⌂<span>Home</span></button>
+        <button class="nav-item" data-page="instances">▣<span>Instances</span></button>
+        <button class="nav-item" data-page="discover">◈<span>Discover</span></button>
+        <button class="nav-item" data-page="settings">⚙<span>Settings</span></button>
+      </nav>
+      <div class="sidebar-bottom"><div class="profile"><div class="avatar">G</div><div><b>Guest</b><small>Local profile</small></div></div></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar"><div><h1 id="page-title">Home</h1><p id="page-subtitle">Your Minecraft worlds, one click away.</p></div><button class="icon-btn" id="themeBtn" title="Toggle theme">☾</button></header>
+
+      <section id="home" class="page active-page">
+        <div class="hero card">
+          <div><span class="eyebrow">MINECRAFT LAUNCHER</span><h2>Ready to play?</h2><p>Choose an instance and launch Minecraft from your browser.</p><button class="primary" id="launchMain">▶ Launch Minecraft</button><div id="launchStatus" class="status">Launcher bridge: checking…</div></div>
+          <div class="hero-art"><div class="cube">◆</div></div>
+        </div>
+        <div class="section-head"><h3>Recent instances</h3><button class="text-btn" data-page-link="instances">View all →</button></div>
+        <div class="grid" id="recentGrid"></div>
+      </section>
+
+      <section id="instances" class="page">
+        <div class="toolbar"><input id="instanceSearch" placeholder="Search instances…"/><button class="primary small" id="newInstance">+ New instance</button></div>
+        <div class="grid" id="instanceGrid"></div>
+      </section>
+
+      <section id="discover" class="page">
+        <div class="discover-banner card"><div><span class="eyebrow">DISCOVER</span><h2>Mods, modpacks & more</h2><p>Browse a clean, GitHub-hostable launcher interface. Connect the Modrinth API later if you want live projects.</p></div><div class="badge">API READY</div></div>
+        <div class="section-head"><h3>Featured</h3></div><div class="grid" id="discoverGrid"></div>
+      </section>
+
+      <section id="settings" class="page">
+        <div class="settings-card card"><h2>Launcher settings</h2><label>Minecraft command / executable<input id="minecraftCommand" placeholder="minecraft:// or path to launcher"/></label><p class="hint">For a GitHub Pages site, launching a desktop app requires a local launcher bridge or a registered custom protocol. This demo uses <code>http://127.0.0.1:47521</code>.</p><button class="primary" id="saveSettings">Save settings</button><div id="saveStatus" class="status"></div></div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
